@@ -1,0 +1,29 @@
+# Raw course materials are intentionally excluded.
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.mp3
+*.wav
+*.m4a
+*.aac
+*.pdf
+*.pptx
+*.docx
+*.xlsx
+*.srt
+*.vtt
+*.json
+*.txt
+
+# Local processing outputs and dependencies
+.codex_work/
+.codex_deps/
+node_modules/
+dist/
+build/
+__pycache__/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db

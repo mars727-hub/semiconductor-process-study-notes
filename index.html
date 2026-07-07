@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>半導體製程互動複習網站</title>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [["\\(", "\\)"], ["$", "$"]], displayMath: [["\\[", "\\]"]] },
+      svg: { fontCache: "global" }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="主選單">
+      <a class="brand" href="#top"><span class="mark">Si</span><span>半導體製程複習</span></a>
+      <div class="navlinks">
+        <a href="#map">課程地圖</a>
+        <a href="#sessions">SMT 筆記</a>
+        <a href="#flashcards">Flashcards</a>
+        <a href="#quiz">測驗</a>
+        <a href="#privacy">隱私</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <p class="kicker">Semiconductor Manufacturing Process｜SMT-01 到 SMT-18</p>
+        <h1>半導體製程互動複習網站</h1>
+        <p class="lead">
+          依課程錄影順序整理 SMT-01、SMT-02、SMT-03…的講義重點、製程流程、術語、老師強調與互動測驗。內容以講義為主、錄音逐字稿作為強調與補充核對來源；原始影片、PDF 與完整逐字稿均未公開。
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#sessions">開始複習</a>
+          <a class="button secondary" href="#quiz">直接測驗</a>
+        </div>
+        <div class="stats" aria-label="網站統計">
+          <div class="stat"><strong>17</strong><span>份主講義</span></div>
+          <div class="stat"><strong>35</strong><span>段課程影片</span></div>
+          <div class="stat"><strong>1143</strong><span>分鐘本機轉錄核對</span></div>
+          <div class="stat"><strong>0</strong><span>原始素材公開</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="map">
+      <div class="container">
+        <h2>課程地圖</h2>
+        <p>依據可用講義與課程錄影排序建立。SMT-07 未在來源資料夾中找到，因此不補寫內容，改列入缺件提醒。</p>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <section id="source">
+      <div class="container">
+        <h2>資料來源與驗證方式</h2>
+        <div class="grid">
+          <div class="note verified">
+            <h3>已使用來源</h3>
+            <ul>
+              <li>SMT-01 到 SMT-18 的主題講義 PDF，共 17 份。</li>
+              <li>SMT-01 到 SMT-18 的課程錄影，共 35 段。</li>
+              <li>SMT-06 的連續性檢查截圖只作為本機核對，不放入公開網站。</li>
+            </ul>
+          </div>
+          <div class="note warning">
+            <h3>驗證與限制</h3>
+            <ul>
+              <li>重要陳述以講義頁面內容為主，錄音用來補充老師口頭強調。</li>
+              <li>ASR 對中英混合術語有誤聽風險；疑似但不確定的強調已標「需人工確認」。</li>
+              <li>本網站是複習筆記，不取代原課程講義、正式教材或安全操作規範。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel" id="missing" style="margin-top:18px">
+          <h3>缺件與需人工確認</h3>
+          <ul id="missingList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessions">
+      <div class="container">
+        <h2>SMT 分堂筆記</h2>
+        <p>可依章節篩選或搜尋關鍵字，例如：oxidation、CMP、photoresist、etch、dopant、cleanroom。</p>
+        <div class="controls">
+          <input id="searchInput" type="search" placeholder="搜尋製程、術語或章節..." aria-label="搜尋課程內容" />
+          <select id="sessionSelect" aria-label="選擇章節"></select>
+        </div>
+        <div class="session-list" id="sessionList"></div>
+      </div>
+    </section>
+
+    <section id="flashcards-section">
+      <div class="container">
+        <h2>Flashcards</h2>
+        <p>點卡片翻面，快速複習跨章節常見術語。</p>
+        <div class="flashcards" id="flashcards"></div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="container">
+        <div class="quiz-head">
+          <div>
+            <h2>互動測驗</h2>
+            <p>共 18 題，涵蓋各 SMT 章節與一題跨流程整合題。交卷後會顯示正解與詳解。</p>
+          </div>
+          <div>
+            <div class="progress" aria-label="作答進度"><div class="bar" id="progressBar"></div></div>
+            <p id="progressText" style="margin:6px 0 0;color:var(--muted);font-weight:850">已作答 0 / 18</p>
+          </div>
+        </div>
+        <div class="score" id="scoreBox"></div>
+        <div id="quizList"></div>
+        <div class="actions">
+          <button class="button" id="submitBtn" type="button">交卷計分</button>
+          <button class="button secondary" id="resetBtn" type="button">重作測驗</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy">
+      <div class="container">
+        <h2>隱私與費用</h2>
+        <div class="grid">
+          <div class="note verified">
+            <h3>公開範圍</h3>
+            <p>網站只包含靜態 HTML、CSS、JavaScript 與 README。所有課程影片、PDF、逐字稿與中間處理檔都不在公開網站資料夾內。</p>
+          </div>
+          <div class="note">
+            <h3>免費部署</h3>
+            <p>預計使用 GitHub Pages 免費部署，不使用後端伺服器、資料庫、付費網域或付費服務。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      個人學習用途。請勿將未授權課程原始素材上傳或散布。
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
