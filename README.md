@@ -1,102 +1,88 @@
-# 半導體製程互動複習網站
+# 半導體製程互動複習筆記
 
-這是一個將半導體製程課程整理為靜態互動複習網站的 GitHub Pages 專案。網站依課程順序整理 SMT-01 到 SMT-18 的講義與錄影重點，提供章節摘要、術語、製程流程、老師強調、flashcards 與互動測驗。
+Live site: https://mars727-hub.github.io/semiconductor-process-study-notes/
 
-Live site:
+Repository: https://github.com/mars727-hub/semiconductor-process-study-notes
 
-https://mars727-hub.github.io/semiconductor-process-study-notes/
+## 專案目的
 
-Repository:
+本專案將半導體製程課程資料整理成可公開瀏覽的靜態互動複習網站。網站以繁體中文呈現，依 SMT 分堂建立考前複習筆記，包含逐頁講義整理、核心術語、製程流程、公式、圖表說明、老師強調、待確認標籤、flashcards 與互動測驗。
 
-https://github.com/mars727-hub/semiconductor-process-study-notes
+## 頁面清單
 
-## Project Purpose
+- `index.html`：首頁、課程地圖、快速術語卡、總複習測驗、隱私與費用說明
+- `smt-01.html`：課程導論與半導體產業
+- `smt-02.html`：半導體材料基礎
+- `smt-03.html`：半導體元件基礎
+- `smt-04.html`：晶圓製備
+- `smt-05.html`：化學品與濕式製程
+- `smt-06.html`：污染控制與潔淨技術
+- `smt-08.html`：氣體與真空控制
+- `smt-09.html`：CMOS 製程整合
+- `smt-10.html`：氧化製程
+- `smt-11.html`：薄膜沉積
+- `smt-12.html`：金屬化與互連
+- `smt-13.html`：微影製程一
+- `smt-14.html`：微影製程二
+- `smt-15.html`：微影製程三
+- `smt-16.html`：蝕刻製程
+- `smt-17.html`：摻雜製程
+- `smt-18.html`：CMP 平坦化
 
-- 幫助快速複習 semiconductor manufacturing process 課程。
-- 依 SMT-01、SMT-02、SMT-03 等錄影順序建立學習筆記。
-- 保留老師強調與星號相關內容，並把不確定的語音辨識結果標示為需人工確認。
-- 使用純靜態 HTML、CSS、JavaScript，在 GitHub Pages 上免費部署。
+SMT-07 來源缺失，因此未建立分堂頁面，也未補寫未提供內容。
 
-## Course Page List
-
-目前網站採單頁互動儀表板形式，首頁內含下列課程區塊：
-
-- SMT-01 Introduction
-- SMT-02 Materials
-- SMT-03 Devices
-- SMT-04 Wafer Prep
-- SMT-05 Chemicals
-- SMT-06 Contamination
-- SMT-08 Gas Controls
-- SMT-09 Process Flow
-- SMT-10 Oxidation
-- SMT-11 Deposition
-- SMT-12 Metallization
-- SMT-13 Photo-1
-- SMT-14 Photo-2
-- SMT-15 Photo-3
-- SMT-16 Etch
-- SMT-17 Doping
-- SMT-18 CMP
-
-SMT-07 was not found in the available course materials and is marked as missing.
-
-## File Structure
+## 檔案結構
 
 ```text
 .
 ├── index.html
+├── smt-01.html
+├── smt-02.html
+├── ...
+├── smt-18.html
 ├── assets/
 │   ├── css/
 │   │   └── styles.css
 │   └── js/
-│       └── app.js
+│       ├── app.js
+│       ├── course-data.js
+│       └── lesson.js
 ├── .gitignore
 └── README.md
 ```
 
-## Local Preview
+## 本機預覽
 
-Open `index.html` directly in a browser, or serve the folder with any simple static server.
-
-Example:
+可直接用瀏覽器開啟 `index.html`。若要用本機伺服器預覽，可在此資料夾執行：
 
 ```bash
 python -m http.server 8000
 ```
 
-Then open:
+然後開啟：
 
 ```text
 http://localhost:8000/
 ```
 
-## Updating Future Lecture Materials
+## 如何更新後續講義
 
-1. Review the new lecture recording and handout privately.
-2. Extract only summary-level concepts, terminology, process flows, and teacher emphasis.
-3. Add or update the relevant session data in `assets/js/app.js`.
-4. Do not place raw recordings, PDFs, full transcripts, or processing outputs in this repository.
-5. Run the privacy scan before committing.
-6. Commit and push the static site files.
+1. 先在私人工作區處理新講義、錄音或影片，不要放入公開網站資料夾。
+2. 只將整理後、可公開的學習筆記轉成 HTML/CSS/JS。
+3. 若講義有「必考、會考、星號、很重要、注意」等提示，請放入老師強調區，不要混入一般段落。
+4. 若來源互相衝突或文字抽取不足，請使用「待確認、資料衝突、需人工確認」標籤。
+5. 發布前執行隱私掃描，通過後再 commit 與 push。
 
-## Privacy Scope
+## 隱私範圍
 
-此 repository 只包含公開網站所需的靜態檔案。
+公開網站不包含原始 PDF、影片、錄音、完整逐字稿、處理中間檔、私人筆記、本機路徑或憑證。公開內容僅限整理後的靜態網頁與互動程式。
 
-未上傳的內容包含：
+## 免費託管
 
-- 課程影片與錄音
-- 原始 PDF 講義
-- 完整逐字稿
-- 本機中間處理檔
-- 本機依賴套件資料夾
-- 登入憑證、密碼或其他私密資料
+本網站使用 GitHub Pages 免費託管，不需要後端、資料庫、付費網域或付費託管服務。任何知道網址的人都可以瀏覽 public repository 發布的網站內容。
 
-## Hosting and Cost
+## 已知限制
 
-This site uses free GitHub Pages hosting. It does not require a backend server, database, paid domain, or paid external service.
-
-## Notes
-
-The website is for personal study and review. Please avoid uploading or redistributing course source materials unless you have permission.
+- SMT-07 缺少來源資料。
+- 部分頁面文字抽取偏短，網站已標示「需人工確認」。
+- 老師強調內容以轉錄線索輔助判讀；疑似誤聽者不直接標成必考。
