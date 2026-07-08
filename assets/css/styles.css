@@ -252,9 +252,18 @@ h4 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.concept-grid,
+.formula-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
 .note-card,
 .session-card,
 .term-card,
+.concept-card,
+.diagram-card,
 .page-card,
 .quiz-item,
 .text-panel,
@@ -270,12 +279,57 @@ h4 {
 .note-card,
 .session-card,
 .term-card,
+.concept-card,
+.diagram-card,
 .page-card,
 .quiz-item,
 .text-panel,
 .formula-box,
 .verify-list {
   padding: 18px;
+}
+
+.theme-line {
+  color: #40504b;
+  font-weight: 700;
+}
+
+.concept-card {
+  border-left: 5px solid var(--accent);
+}
+
+.review-note,
+.self-check {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: #314640;
+}
+
+.diagram-card svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfb;
+}
+
+.diagram-card p {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.formula-grid {
+  align-items: stretch;
+}
+
+.formula-latex {
+  margin-bottom: 10px;
+  color: var(--accent-2);
+  font-size: 20px;
+  font-weight: 900;
 }
 
 .note-card.verified {
@@ -487,6 +541,14 @@ h4 {
   gap: 12px;
 }
 
+.learning-goal {
+  padding: 10px 12px;
+  border-left: 4px solid var(--accent-2);
+  background: #eef5ff;
+  color: #25436f;
+  font-weight: 700;
+}
+
 .page-block {
   border-top: 1px solid var(--line);
   padding-top: 10px;
@@ -505,6 +567,13 @@ h4 {
   border: 1px solid #e7c77f;
   border-radius: 8px;
   background: var(--warn-bg);
+}
+
+.exam-block {
+  padding: 10px 12px;
+  border: 1px solid #f0b9a7;
+  border-radius: 8px;
+  background: #fff7f3;
 }
 
 .flashcard-shell {
@@ -628,6 +697,8 @@ h4 {
   .info-grid,
   .session-grid,
   .term-grid,
+  .concept-grid,
+  .formula-grid,
   .page-grid,
   .lesson-hero {
     grid-template-columns: 1fr;

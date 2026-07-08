@@ -3,27 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SMT-10｜半導體製程互動筆記</title>
+  <title>SMT-10｜半導體製程逐頁複習</title>
   <link rel="stylesheet" href="assets/css/styles.css">
   <script>
-    window.MathJax = { tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] }, svg: { fontCache: 'global' } };
+    window.MathJax = { tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' } };
   </script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body data-session="SMT-10">
   <header class="site-header compact">
     <nav class="nav-bar" aria-label="主要導覽">
-      <a class="brand" href="index.html">半導體製程筆記</a>
+      <a class="brand" href="index.html"><span class="brand-mark">Si</span><span>半導體製程筆記</span></a>
       <div class="nav-links">
         <a href="index.html#sessions">課程地圖</a>
+        <a href="#concepts">核心觀念</a>
         <a href="#page-guide">逐頁整理</a>
-        <a href="#quiz">分堂測驗</a>
+        <a href="#quiz">測驗</a>
       </div>
     </nav>
   </header>
   <main>
     <section class="lesson-hero" id="lessonHero"></section>
     <section class="content-section" id="overview"></section>
+    <section class="content-section" id="studyMap"></section>
+    <section class="content-section" id="concepts"></section>
+    <section class="content-section" id="diagramBlock"></section>
     <section class="content-section" id="terminology"></section>
     <section class="content-section" id="processFlow"></section>
     <section class="content-section" id="formulaBlock"></section>
@@ -32,16 +36,20 @@
     <section class="content-section" id="page-guide">
       <div class="section-heading">
         <p class="eyebrow">Page-by-page Guide</p>
-        <h2>逐頁講義整理</h2>
+        <h2>逐頁、逐重點、逐觀念整理</h2>
       </div>
       <div class="toolbar">
         <label class="search-box">
           <span>頁內搜尋</span>
-          <input id="pageSearch" type="search" placeholder="輸入術語、頁碼、製程步驟">
+          <input id="pageSearch" type="search" placeholder="輸入頁碼、術語、製程、缺陷或公式">
+        </label>
+        <label class="toggle-line">
+          <input id="examOnly" type="checkbox">
+          <span>只看常考提醒</span>
         </label>
         <label class="toggle-line">
           <input id="uncertainOnly" type="checkbox">
-          <span>只看需人工確認頁</span>
+          <span>只看需人工確認</span>
         </label>
       </div>
       <div class="page-grid" id="pageGuide"></div>
@@ -50,7 +58,7 @@
     <section class="content-section" id="quiz"></section>
   </main>
   <footer class="site-footer">
-    <p>本頁只發布整理後的互動筆記，不包含原始講義、影片、完整逐字稿或本機路徑。</p>
+    <p>公開頁面只包含重新整理後的靜態複習筆記，不包含原始講義、影片、錄音或完整逐字稿。</p>
   </footer>
   <script src="assets/js/course-data.js"></script>
   <script src="assets/js/lesson.js"></script>
